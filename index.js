@@ -163,7 +163,7 @@ const validateSync = (data) => {
   console.time("validateSync.loop");
   for (let i = 0; i < people.length; i++) {
     const person = people[i];
-    validateAsync(person);
+    validateSync(person);
   }
   console.timeEnd("validateSync.loop");
 
