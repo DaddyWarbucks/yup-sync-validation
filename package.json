@@ -1,0 +1,14 @@
+{
+  "name": "yup-sync-validation",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js"
+  },
+  "author": "",
+  "license": "MIT",
+  "dependencies": {
+    "yup": "^1.2.0"
+  }
+}
