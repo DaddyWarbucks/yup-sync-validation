@@ -152,6 +152,13 @@ const validateSync = (data) => {
 };
 
 (async () => {
+  // warmup
+  for (let i = 0; i < 500; i++) {
+    const person = people[i];
+    validateSync(person);
+    await validateAsync(person);
+  }
+
   console.time("validateAsync");
   await validateAsync(people[0]);
   console.timeEnd("validateAsync");
