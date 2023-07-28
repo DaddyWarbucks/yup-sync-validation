@@ -174,13 +174,15 @@ const validateSync = (data) => {
   }
   console.timeEnd("validateAsync.loop");
 
-  console.time("validateAsync.all");
+  console.time("validateAsync.allSettled");
   await Promise.allSettled(
-    people.map(async (person, index) => {
-      // console.time("multi" + index);
-      return validateAsync(person);
-      // console.timeEnd("multi" + index);
-    })
+    people.map((person) => validateAsync(person))
+  );
+  console.timeEnd("validateAsync.allSettled");
+
+  console.time("validateAsync.all");
+  await Promise.all(
+    people.map((person) => validateAsync(person))
   );
   console.timeEnd("validateAsync.all");
 })();
