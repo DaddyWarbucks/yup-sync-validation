@@ -158,7 +158,6 @@ const validateSync = (data) => {
     validateSync(person);
     await validateAsync(person);
   }
-  await validateAsync(people[0]);
 
   console.time("validateAsync");
   await validateAsync(people[0]);
